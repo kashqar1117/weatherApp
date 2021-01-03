@@ -25,9 +25,22 @@
     <div class="row col-sm-5">
 
         <div class="input-group mb-3 mt-3 ">
-            <input type="text" class="form-control" placeholder="Type in City" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
+            <input type="text" class="form-control" placeholder="Type in City" >
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+    </div>
+
+
+    <!--dump weather forcat-->
+
+    <div class="card" style="width: 18rem;">
+        <div id ='iconHolder'></div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            
+            <p class="temp"></p>
+            <p class="humidity"></p>
+            
         </div>
     </div>
 
@@ -44,33 +57,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
+        <script src="./app.js"></script>
 </body>
 
 
-<script>
 
-var apiKey = 'c47c7993a34be35d985a7350c0baca7c'
-var queryURL = 'pro.openweathermap.org/data/2.5/forecast/hourly?q=?Chicago&appid=c47c7993a34be35d985a7350c0baca7c'
-
-
-
-$.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function(response) {
-        console.log(response);
-      });
-    
-
-    //   $.ajax({
-    //     url: queryURL,
-    //     method: "GET"
-    //   }).then(function(response) {
-    //     createRow(response);
-    //   });
-  
-
-
-</script>
 
 </html>
