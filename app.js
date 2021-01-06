@@ -34,6 +34,7 @@ function fiveDayForcast(response){
     $.ajax({ url: queryTwoUrl, method: "GET"})
     .then(function (forcastData) {
         console.log(forcastData);
+        console.log(forcastData.timezone);
         console.log(forcastData.daily[0].temp.day);
         console.log(forcastData.daily[0].humidity);
         console.log(forcastData.daily[0].wind_speed);
@@ -42,16 +43,28 @@ function fiveDayForcast(response){
         // var windPara = forcastData.daily[i].wind_speed;
 
         for (var i =0; i<5;i++){
-            //create\
+            //create
+            var lineP = $('<div>')
             var newDiv = $('<div>')
+
+
+            //addclass
+            newDiv.addClass('border')
+
+
+            //append to forcastDiv
             $('.fiveDayForcast').append(newDiv)
+            
+            
+           
             //innerHtml
-            newDiv.html('<p>'+tempPara+'</p>')
-            // newDiv.append(forcastData.daily[0].temp.day)
-            // newDiv.html('<p>'+humidpara+'</p>')
-            // newDiv.html('<p>'+windPara+'</p>')
-            // //append
-            // $('.fiveDayForcast').append(tempPara)
+            // newDiv.html('<p>'+forcastData.daily[i].temp.day+'</p>')
+            newDiv.html(`<h5>${forcastData.timezone}</h5>
+            <p> Temp: ${forcastData.daily[i].temp.day}</p>
+            <p>Humidity: ${forcastData.daily[i].humidity} %</p>
+            <p> Wind Speed: ${forcastData.daily[0].wind_speed} miles</p>`)
+            
+           
         }
 
         
@@ -59,19 +72,20 @@ function fiveDayForcast(response){
          
      });
     
+     
+    }
     
-
-}
-
-$('#button-addon2').on('click', function(){
-
+    $('#button-addon2').on('click', function(){
         
-     var cityInput = $('.form-control').val().trim()
-     console.log(cityInput)
-     queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=c47c7993a34be35d985a7350c0baca7c`
-
-    runCall(queryURL)
-})
-
-
-
+        
+        var cityInput = $('.form-control').val().trim()
+        console.log(cityInput)
+        queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=c47c7993a34be35d985a7350c0baca7c`
+        
+        runCall(queryURL , cityInput)
+    })
+    
+    
+    
+    
+    console.log(moment().format('MMMM Do YYYY, h:mm:ss a'))
