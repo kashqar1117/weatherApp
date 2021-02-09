@@ -4,6 +4,9 @@
 }
 
 
+.wrapper{
+    margin: 50px 150px 0px 150px;
+}
 .border{
     border-color: black;
 }
@@ -14,3 +17,6 @@ width: 100%;
 .hide{
     display: none;
 }
+
+
+

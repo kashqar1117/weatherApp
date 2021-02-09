@@ -5,86 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forcast</title>
-
+    
+    <link rel = 'stylesheet' href = "reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link rel = 'stylesheet' href = "reset.css">
         <link rel = 'stylesheet' href ="style.css">
 </head>
 
 <body>
 
-    <!--nav bar-->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Weather Forcast</span>
-        </div>
-    </nav>
+    <div class="wrapper">
 
-
-    <!--search bar-->
-
-    <div class="row col-sm-5">
-
-        <div class="input-group mb-3 mt-3 ">
-            <input type="text" class="form-control" placeholder="Type in City" >
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-        </div>
-    </div>
-
-<!--search weahter container-->
-<div class="searchWeatherConatiner">
-    <!--dump weather forcat-->
-
-    <div class="card hide" style="width: 18rem;">
         
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <h6 class = "date"></h6>
-            <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
-              <p class="temp"></p>
-            <p class="humidity"></p>
-            <p class = "windSpeed"></p>
+        <!--nav bar-->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Weather Forcast</span>
+            </div>
+        </nav>
+        
+        
+        <!--search bar-->
+        
+        <div class="row">
+            <div class="col-lg-4">
+
+                
+                
+                <div class="input-group mb-3 mt-3 ">
+                    <input type="text" class="form-control inpt" placeholder="Type in City" >
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                </div>
+                
+                
+                
+                <!--Historty-->
+                <div class="history" style = 'width:300px'>
+                    <h1>History</h1>
+                    <ol  id='weatherHistory'>
+                        
+                    </ol>
+                </div>
+                
+            </div><!--first column end-->
+
+
+            <div class="col-lg-8">
+
+                
+                
+                <div class="weatherDumpCont col-md-7">
+                    
+                    
+                    <!--search weahter container-->
+                    <div class="searchWeatherConatiner">
+                        <!--dump weather forcat-->
+                        
+                        <div class="card firstWethareDump hide mt-3" style="width: 18rem;">
+                            
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <h6 class = "date"></h6>
+                                <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                                <p class="temp"></p>
+                                <p class="humidity"></p>
+                                <p class = "windSpeed"></p>
+                                
+                            </div>
+                        </div>
+                    </div><!--end Searcvh weather Container-->
+                    
+                    
+                    
+                    
+                    
+                    <!--start five dat forcast container-->
+                    <div class="fiveDay">
+                        
+                        <!--dump five day forcast-->
+                        <div class=" card2 fiveDayForcast hide d-flex" style="width: 18rem;"></div>
+                    </div><!--end 5 day-->
+                    
+                    
+                </div>
+            </div><!--second column end-->
+                
+        </div><!--row end-->
             
-        </div>
-    </div>
-</div><!--end Searcvh weather Container-->
-
-
-
-
-
-<!--start five dat forcast container-->
-<div class="fiveDay">
-
-    <!--dump five day forcast-->
-    <div class=" card2 fiveDayForcast hide" style="width: 18rem;">
-      
-   
-    </div>
-    </div><!--end 5 day-->
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            
+            
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
         <script src = "lib/moment/moment.minn.js"></script>
         <script src="./app.js"></script>
-
         
-      
-</body>
-
+        
+    </div>
+        
+    </body>
+    
 
 
 
